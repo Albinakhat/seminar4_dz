@@ -1,19 +1,21 @@
-﻿// Напишите цикл, который принимает на вход два числа (A и B) и
-// возводит число A в натуральную степень B.
-// 3, 5 -> 243 (3⁵)
-//2, 4 -> 16
+﻿// Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
-Console.WriteLine("Write number1: ");
-double A =Convert.ToInt32(Console.ReadLine());
+//452 -> 11
+//82 -> 10
+//9012 -> 12
 
-Console.WriteLine("Write natural number2:");
-int B =Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Write number");
+int num = Convert.ToInt32(Console.ReadLine());
 
-double Power(double num1, int num2);
-double result =1;
+Console.WriteLine("Сумма " + GetSumNum(num));
 
-for (int i=0; i<num2; i++)
+int GetSumNum(int input)
 {
-    result= result * num1;
+    int sum = 0;
+    while(input > 0)
+    {
+        sum += input % 10; 
+        input = input /10;    
+    }
+    return sum;
 }
-return result;
